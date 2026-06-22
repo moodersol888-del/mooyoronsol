@@ -237,10 +237,13 @@ svg{fill:currentColor}
 @media(max-width:920px){
   .hero{min-height:0;display:flex;flex-direction:column}
   .hero::before{display:none}
-  .hero__art{position:static;order:-1}
-  .hero__art img{height:auto;object-fit:fill}
-  .hero__copy{padding:10px 22px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+  .hero__art{position:relative;order:-1}
+  .hero__art img{width:100%;height:58vh;min-height:330px;max-height:460px;object-fit:cover;object-position:50% 60%;display:block}
+  .hero__art::after{content:"";position:absolute;left:0;right:0;top:0;height:52%;background:linear-gradient(180deg,rgba(253,244,218,.85) 0%,rgba(253,244,218,.45) 45%,transparent 100%);pointer-events:none;z-index:1}
+  .hero__copy{position:static;padding:18px 22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
   .hero__copy>*{max-width:100%}
+  .hero__copy .logo{position:absolute;top:38px;left:0;right:0;z-index:4;margin:0}
+  .hero__copy .logo__th{justify-content:center}
   .hero__copy .ca{position:static;left:auto;bottom:auto;margin:0}
   .hero__cta{justify-content:center}
   .hero .deco{display:none}
